@@ -1,0 +1,17 @@
+if __name__ == '_main_':
+    data = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        data.append([name, score])
+    data.sort(key = lambda x : x[1])
+    lowest = data[0][1]
+    secondLowest = None
+    for x in data:
+        if x[1] > lowest:
+            secondLowest = x[1]
+            break
+    secondLowestScorers = [x[0] for x in data if x[1] == secondLowest]
+    secondLowestScorers.sort()
+    for x in secondLowestScorers:
+        print(x)
